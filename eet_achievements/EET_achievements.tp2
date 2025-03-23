@@ -1,0 +1,52 @@
+BACKUP ~weidu_external/EET_steam_achievements/backup~
+AUTHOR ~Xarlith~
+
+VERSION ~v0.1~
+
+LANGUAGE ~English~
+         ~english~
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+/////        Steam Achievements fix for EET            \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+BEGIN ~Extended achievements handler~
+DESIGNATED 0
+REQUIRE_PREDICATE (GAME_IS ~eet~) ~This mod cannot be installed on this game~
+
+COPY ~%MOD_FOLDER%/core/ACHIEVEM.2DA~ ~override~
+COPY ~%MOD_FOLDER%/core/ACHIEVEM.BCS~ ~override~
+
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+/////                                                  \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+
+BEGIN ~Set Steam AppID to BG:EE~
+DESIGNATED 10
+SUBCOMPONENT ~Select Steam App ID~
+REQUIRE_PREDICATE (GAME_IS ~eet~) ~This mod cannot be installed on this game~
+COPY ~%MOD_FOLDER%/core/steam_appidBG1.txt~ ~steam_appid.txt~
+PRINT ~Steam App ID set to BG1EE. If you finish BG1/SoD, set it to BG2:EE.~
+ACTION_IF NOT FILE_EXISTS ~steam_api64.dll~ BEGIN
+    PRINT ~Warning: steam_api64.dll not found! Steam might not recognize the game correctly.~
+END
+
+BEGIN ~Set Steam AppID to BG2:EE~
+DESIGNATED 11
+SUBCOMPONENT ~Select Steam App ID~
+REQUIRE_PREDICATE GAME_IS ~eet~ ~This mod cannot be installed on this game~
+COPY ~%MOD_FOLDER%/core/steam_appidBG2.txt~ ~steam_appid.txt~
+PRINT ~Steam App ID set to BG2EE.~
+ACTION_IF NOT FILE_EXISTS ~steam_api64.dll~ BEGIN
+    PRINT ~Warning: steam_api64.dll not found! Steam might not recognize the game correctly.~
+END
