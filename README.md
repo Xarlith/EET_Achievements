@@ -28,7 +28,7 @@ This mod uses a **WEIDU installer**. To install:
 ## Important Notes
 - The **steam_appid.txt file must be placed in the EET main directory** (where `Baldur.exe` is located).
 - Make sure you have **steam_api64.dll** in your installation directory—Steam needs it to track achievements.
-- **All achievements from your current playthrough may trigger at once** when loading a save, which might look suspicious to Steam.
+- **All achievements from your current playthrough may trigger at once** when loading an old save, which might look suspicious to Steam.
 
 ## Uninstallation
 Run **setup-EET_steam_achievements.exe** again and select "Uninstall."
