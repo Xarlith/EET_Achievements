@@ -13,7 +13,7 @@ Normally, EET is detected as BG2EE, preventing BG1/SoD achievements from unlocki
 This mod uses a **WEIDU installer**. To install:
 
 1. Extract the mod to your **EET installation folder**.
-2. Run **setup-EET_steam_achievements.exe**.
+2. Run **setup-eet_achievements.exe**.
 3. Select the following components:
 
    - **"Expanded achievements handler"** → Installs the expanded achievements handling script.
